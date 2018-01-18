@@ -76,3 +76,5 @@ The boundaries of Region of interest are also set manually. These may not work f
 To modify the pipeline to also detect curved lane lines.
 
 To smooth out the lane detection by averaging the values detected in previous frames of the video.
+
+Implementing some logic to dynamically change the threshold values and to detect and set the region of interest.
