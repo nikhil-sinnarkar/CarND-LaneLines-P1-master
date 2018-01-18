@@ -16,6 +16,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/grayscale.jpg "Grayscale"
+[gray]: ./md resources/solidWhiteRight_gray.jpg
 
 ---
 
@@ -26,7 +27,7 @@ The goals / steps of this project are the following:
 The pipeline I have developed consists of 6 steps.
 
 First I read the image and converted it to grayscale.
-![grayscale][./md resources/solidWhiteRight_gray.jpg]
+![alt text][gray]
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
