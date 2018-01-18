@@ -21,9 +21,12 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Pipeline description.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+The pipeline I have developed consists of 6 steps.
+
+First I read the image and converted it to grayscale.
+![grayscale][./md resources/solidWhiteRight_gray.jpg]
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
