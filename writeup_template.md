@@ -45,16 +45,18 @@ The output is as shown here.
 
 ![hough](./md%20resources/solidWhiteRight_hough.jpg)
 
-* This image is overlayed on top of original image to highlight the lanes which are detected. !Emoji :smilie The result is :
+* This image is overlayed on top of original image to highlight the lanes which are detected. :smilie: The result is :
 
 ![final](./md%20resources/solidWhiteRight.jpg)
 
 
-#### modifications to draw_lines() function
+#### Modifications to draw_lines() function
 This is how I modified the draw_lines() function in order to draw a single line on the left and right lanes.
+
 First I seperated the points into 2 groups, one for points on left lane and other for points on right lane.
+
 Next, using polyfit(), I found the cofficients of a first order polynomial equation that would fit all the points for each lane.
-Using these cofficients I was able to model a single line for both left and right lanes as **y = Ax + B**
+Using these cofficients I was able to model a single line for both left and right lanes as  **y = Ax + B**
 
 
 ### 2. Identify potential shortcomings with your current pipeline
