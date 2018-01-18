@@ -55,23 +55,24 @@ This is how I modified the draw_lines() function in order to draw a single line 
 
 First I seperated the points into 2 groups, one for points on left lane and other for points on right lane.
 
-Next, using 'polyfit()', I found the cofficients of a first order polynomial equation that would fit all the points for each lane.
+Next, using `polyfit()`, I found the cofficients of a first order polynomial equation that would fit all the points for each lane.
 Using these cofficients I was able to model a single line for both left and right lanes as  
 **y = Ax + B**
 
-In this equation I put the y coordinates of my Region of interest to obtain x values. I pass these values to 'cv2.line()' to draw a single lane line.
+In this equation I put the y coordinates of my Region of interest to obtain x values. I pass these values to `cv2.line()` to draw a single lane line.
 
 
-### 2. Identify potential shortcomings with your current pipeline
+### 2. Potential shortcomings with the current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
+The threshold values for canny edge detection and hough transform are set manually so the pipeline may not be able to identify lanes under different lighting conditions.
 
-Another shortcoming could be ...
+The boundaries of Region of interest are also set manually. These may not work for 
+  1. Images having different resolution (width, height) and  
+  2. Changes in camera orientation. For eg. if camera is pointed slightly upwards.
 
+### 3. Possible improvements to the pipeline
 
-### 3. Suggest possible improvements to your pipeline
+To modify the pipeline to also detect curved lane lines.
 
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+To smooth out the lane detection by averaging the values detected in previous frames of the video.
