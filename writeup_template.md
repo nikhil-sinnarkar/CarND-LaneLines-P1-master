@@ -31,9 +31,17 @@ The pipeline I have developed consists of 6 steps.
 
 * Gaussian blur is applied to grayscaled image.
 
-* The edges are detected using canny edge detection algorithm.
+* The edges are detected using canny edge detection algorithm. The result is an image with only edges.
 
 ![canny](./md%20resources/solidWhiteRight_canny.jpg)
+
+* Next I created a region of interest and applied it over the image shown above. In the output I got an image with only the necessary information i.e. lane lines.
+
+![masked](./md%20resources/solidWhiteRight_masked.jpg)
+
+* In order to find out the all the x,y coordinates that belong to the lane lines I took a hough transform of this image. The hough transform provided the coordinates of start & end point of all the lines that are detected in the image.
+
+
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
