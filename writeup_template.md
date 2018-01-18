@@ -33,7 +33,7 @@ The pipeline I have developed consists of 6 steps.
 
 * The edges are detected using canny edge detection algorithm.
 
-![alt text]: ./md%20resources/solidWhiteRight_canny.jpg
+![canny](./md%20resources/solidWhiteRight_canny.jpg)
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
