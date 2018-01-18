@@ -39,7 +39,13 @@ The pipeline I have developed consists of 6 steps.
 
 ![masked](./md%20resources/solidWhiteRight_masked.jpg)
 
-* In order to find out the all the x,y coordinates that belong to the lane lines I took a hough transform of this image. The hough transform provided the coordinates of start & end point of all the lines that are detected in the image.
+* In order to find out the all the x,y coordinates that belong to the lane lines I took a hough transform of this image. The hough transform provided the coordinates of start & end point of all the lines that are detected in the image. Lines corresponding to left and right lane are identified and drawn (more info on drawing lines below). The output is as shown below.
+
+![hough](./md%20resources/solidWhiteRight_hough.jpg)
+
+* This image is overlayed on top of original image to highlight the lanes which are detected. The result is :
+
+![final](./md%20resources/solidWhiteRight.jpg)
 
 
 
