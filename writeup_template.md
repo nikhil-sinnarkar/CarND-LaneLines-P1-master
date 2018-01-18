@@ -39,20 +39,22 @@ The pipeline I have developed consists of 6 steps.
 
 ![masked](./md%20resources/solidWhiteRight_masked.jpg)
 
-* In order to find out the all the x,y coordinates that belong to the lane lines I took a hough transform of this image. The hough transform provided the coordinates of start & end point of all the lines that are detected in the image. Lines corresponding to left and right lane are identified and drawn (more info on drawing lines below). The output is as shown below.
+* In order to find out the all the x,y coordinates that belong to the lane lines I took a hough transform of this image. The hough transform provided the coordinates of start & end point of all the lines that are detected in the image. 
+Lines corresponding to left and right lanes are identified and drawn (more info on drawing lines below). 
+The output is as shown here.
 
 ![hough](./md%20resources/solidWhiteRight_hough.jpg)
 
-* This image is overlayed on top of original image to highlight the lanes which are detected. The result is :
+* This image is overlayed on top of original image to highlight the lanes which are detected. !Emoji :smilie The result is :
 
 ![final](./md%20resources/solidWhiteRight.jpg)
 
 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
+#### modifications to draw_lines() function
+This is how I modified the draw_lines() function in order to draw a single line on the left and right lanes.
+First I seperated the points into 2 groups, one for points on left lane and other for points on right lane.
+Next, using polyfit(), I found the cofficients of a first order polynomial equation that would fit all the points for each lane.
+Using these cofficients I was able to model a single line for both left and right lanes as **y = Ax + B**
 
 
 ### 2. Identify potential shortcomings with your current pipeline
