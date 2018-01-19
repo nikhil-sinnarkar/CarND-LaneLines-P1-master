@@ -54,6 +54,21 @@ The output is as shown here.
 This is how I modified the draw_lines() function in order to draw a single line on the left and right lanes.
 
 First I seperated the points into 2 groups, one for points on left lane and other for points on right lane.
+```python
+# seperating the points belonging to left and right lane
+    for line in lines:
+        for x1,y1,x2,y2 in line:
+            if(x1 < 480):
+                left_x.append(x1)
+                left_x.append(x2)
+                left_y.append(y1)
+                left_y.append(y2)
+            else:
+                right_x.append(x1)
+                right_x.append(x2)
+                right_y.append(y1)
+                right_y.append(y2)
+```
 
 Next, using `polyfit()`, I found the cofficients of a first order polynomial equation that would fit all the points for each lane.
 Using these cofficients I was able to model a single line for both left and right lanes as  
