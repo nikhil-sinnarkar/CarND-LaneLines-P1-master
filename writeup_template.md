@@ -79,14 +79,17 @@ Next, using `polyfit()`, I found the cofficients (**A** and **B**) of a first or
     left_lane = np.polyfit(np_left_x,np_left_y,1)
 ```
 Using these cofficients I was able to model a single line for both left and right lanes as  
-**_y_ = A_x_ + B**
+**_y_ = A _x_ + B**
 
 In this equation I put the y coordinates of my Region of interest to obtain x values.
 ```python
-    left_lane = np.polyfit(np_left_x,np_left_y,1)
+    x1 = int((y1 - left_lane[1]) / left_lane[0])
 ```
 I pass these values to `cv2.line()` to draw a single lane line.
-
+```python
+    cv2.line(img, (x1, y1), (x2, y2), color, thickness)
+```
+The output images are saved in [test_images_output]()
 
 ### 2. Potential shortcomings with the current pipeline
 
