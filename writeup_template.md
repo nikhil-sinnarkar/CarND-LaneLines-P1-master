@@ -27,7 +27,7 @@ The pipeline I have developed consists of 6 steps.
 
 ![gray](./md%20resources/solidWhiteRight_gray.jpg)
 
-* Gaussian blur is applied to grayscaled image.
+* Gaussian blur is applied to grayscaled image to filter out noise.
 
 * The edges are detected using canny edge detection algorithm. The result is an image with only edges.
 
