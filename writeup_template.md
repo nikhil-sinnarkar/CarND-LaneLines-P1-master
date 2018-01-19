@@ -15,8 +15,6 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[gray]: ./md%20resources/solidWhiteRight_gray.jpg
-
 ---
 
 ### Reflection
@@ -27,7 +25,7 @@ The pipeline I have developed consists of 6 steps.
 
 * First I read the image and converted it to grayscale.
 
-![alt text][gray]
+![gray](./md%20resources/solidWhiteRight_gray.jpg)
 
 * Gaussian blur is applied to grayscaled image.
 
@@ -49,6 +47,7 @@ The output is as shown here.
 
 ![final](./md%20resources/solidWhiteRight.jpg)
 
+---
 
 #### Modifications to draw_lines() function
 This is how I modified the draw_lines() function in order to draw a single line on the left and right lanes.
@@ -85,25 +84,27 @@ In this equation I put the y coordinates of my Region of interest to obtain x va
 ```python
     x1 = int((y1 - left_lane[1]) / left_lane[0])
 ```
-I pass these values to `cv2.line()` to draw a single lane line.
+I passed these values to `cv2.line()` to draw a single lane line.
 ```python
     cv2.line(img, (x1, y1), (x2, y2), color, thickness)
 ```
 The output images are saved in [test_images_output](https://github.com/nikhil-sinnarkar/CarND-LaneLines-P1-master/tree/master/test_images_output) folder and the output videos are saved in [test_videos_output](https://github.com/nikhil-sinnarkar/CarND-LaneLines-P1-master/tree/master/test_videos_output) folder.
+---
 
 ### 2. Potential shortcomings with the current pipeline
 
 
-The threshold values for canny edge detection and hough transform are set manually so the pipeline may not be able to identify lanes under different lighting conditions.
+The threshold values for grayscale, canny edge detection and hough transform are set manually so the pipeline may not be able to identify lanes under different lighting conditions. For example in cases when there is shadow over the road or abrupt changes in tarmac color.
 
 The boundaries of Region of interest are also set manually. These may not work for 
   1. Images having different resolution (width, height) and  
   2. Changes in camera orientation. For eg. if camera is pointed slightly upwards.
+---
 
 ### 3. Possible improvements to the pipeline
 
-To modify the pipeline to also detect curved lane lines.
+Currently the pipeline detects straight lines. The pipeline can be improved to also detect curved lane lines.
 
-To smooth out the lane detection by averaging the values detected in previous frames of the video.
+Improvements can also be done to smooth out the lane detection. This can be achieved by averaging the values detected in previous frames of the video.
 
-Implementing some logic to dynamically change the threshold values and to detect and set the region of interest.
+Some logic can be incorporated into the pipeline to dynamically change the threshold values and to detect and set the region of interest.
