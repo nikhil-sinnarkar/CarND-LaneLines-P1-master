@@ -69,8 +69,15 @@ First I seperated the points into 2 groups, one for points on left lane and othe
                 right_y.append(y1)
                 right_y.append(y2)
 ```
-
+After seperating the points I converted the list to numpy array.
+```python
+    np_left_x = np.array(left_x)
+    np_left_y = np.array(left_y)
+```
 Next, using `polyfit()`, I found the cofficients of a first order polynomial equation that would fit all the points for each lane.
+```python
+    left_lane = np.polyfit(np_left_x,np_left_y,1)
+```
 Using these cofficients I was able to model a single line for both left and right lanes as  
 **y = Ax + B**
 
