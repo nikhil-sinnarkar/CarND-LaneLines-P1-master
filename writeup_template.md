@@ -89,8 +89,8 @@ I passed these values to `cv2.line()` to draw a single lane line.
     cv2.line(img, (x1, y1), (x2, y2), color, thickness)
 ```
 The output images are saved in [test_images_output](https://github.com/nikhil-sinnarkar/CarND-LaneLines-P1-master/tree/master/test_images_output) folder and the output videos are saved in [test_videos_output](https://github.com/nikhil-sinnarkar/CarND-LaneLines-P1-master/tree/master/test_videos_output) folder.
----
 
+---
 ### 2. Potential shortcomings with the current pipeline
 
 
